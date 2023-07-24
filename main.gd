@@ -29,9 +29,33 @@ func _process(_delta):
 	# print(leftController.get_input("trigger_click"))
 
 func create_wall():
-	var scene = load("res://rigid_box.tscn")
-	for row in 3:
-		for col in 7:
+	const colors = [
+		Color(0.5, 0.0, 0.5),
+		Color(0.5, 0.5, 0.0),
+		Color(0.0, 0.5, 0.5),
+		Color(0.2, 0.0, 0.8)
+	]
+	var materials = [];
+	for i in 4:
+		var mat = StandardMaterial3D.new()
+		mat.albedo_color = colors[i]
+		materials.push_back(mat)
+	const num_rows = 6
+	const num_cols = 20
+	const w = 0.3
+	const h = 0.1
+	const offset_x = num_cols * w / 2
+	const offset_y = h / 2
+	var scene = load("res://rigid_brick.tscn")
+	var boxes = []
+	for row in num_rows:
+		for col in num_cols:
 			var box = scene.instantiate()
+			#var mat = StandardMaterial3D.new()
+			#var mat = box.get_node("Mesh").get_surface_override_material(0)
+			#mat.albedo_color = Color(randf(), randf(), randf())
+			box.get_node("Mesh").set_surface_override_material(0, materials[randi() % 4])
+			box.transform.origin = Vector3(col * w - offset_x, row * h + offset_y, -2)
 			self.add_child(box)
-			box.transform.origin = Vector3(col - 3, row + 0.5, -2)
+			boxes.push_back(box)
+

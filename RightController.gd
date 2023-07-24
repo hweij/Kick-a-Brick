@@ -39,4 +39,4 @@ func _physics_process(_delta):
 			print(result)
 			var local_pos = result.position - obj.position
 			print(local_pos)
-			result.collider.apply_impulse(dir, local_pos)
+			result.collider.apply_impulse(dir * 10, local_pos)
