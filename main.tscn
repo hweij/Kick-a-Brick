@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3alaphrv0bhe"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_dlnwc"]
+[ext_resource type="PackedScene" uid="uid://chocfnd1gnxcl" path="res://player.tscn" id="2_08ovr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_x3fak"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_dlnwc")
+
+[node name="Player" parent="." instance=ExtResource("2_08ovr")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -3.25538)
+mesh = SubResource("BoxMesh_x3fak")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.762578, 0.457425, -0.457425, 0, 0.707107, 0.707107, 0.646896, -0.539224, 0.539224, 0, 4.52379, 0)
