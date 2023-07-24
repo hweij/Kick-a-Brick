@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://chocfnd1gnxcl"]
+[gd_scene load_steps=7 format=3 uid="uid://chocfnd1gnxcl"]
 
+[ext_resource type="Script" path="res://player.gd" id="1_gv83t"]
 [ext_resource type="Script" path="res://RightController.gd" id="1_l2th2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1gwgh"]
@@ -16,6 +17,7 @@ rings = 1
 [sub_resource type="CylinderMesh" id="CylinderMesh_bwfe6"]
 
 [node name="Player" type="Node3D"]
+script = ExtResource("1_gv83t")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
