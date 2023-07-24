@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3alaphrv0bhe"]
+[gd_scene load_steps=5 format=3 uid="uid://b3alaphrv0bhe"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_dlnwc"]
 [ext_resource type="PackedScene" uid="uid://chocfnd1gnxcl" path="res://player.tscn" id="2_08ovr"]
-[ext_resource type="PackedScene" uid="uid://6rf8v1q51180" path="res://rigid_box.tscn" id="3_if1kw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pcrbq"]
 size = Vector3(20, 1, 20)
@@ -26,6 +25,3 @@ shape = SubResource("BoxShape3D_pcrbq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("PlaneMesh_y03x2")
-
-[node name="RigidBox" parent="." instance=ExtResource("3_if1kw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, -2)

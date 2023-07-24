@@ -22,6 +22,16 @@ func _ready():
 	leftController = get_node("Player/XROrigin3D/LeftController");
 	rightController = get_node("Player/XROrigin3D/LeftController");
 	
+	create_wall()
+	
 func _process(_delta):
 	pass
 	# print(leftController.get_input("trigger_click"))
+
+func create_wall():
+	var scene = load("res://rigid_box.tscn")
+	for row in 3:
+		for col in 7:
+			var box = scene.instantiate()
+			self.add_child(box)
+			box.transform.origin = Vector3(col - 3, row + 0.5, -2)
