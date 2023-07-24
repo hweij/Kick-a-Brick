@@ -1,26 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://chocfnd1gnxcl"]
+[gd_scene load_steps=6 format=3 uid="uid://chocfnd1gnxcl"]
 
-[ext_resource type="Script" path="res://LeftController.gd" id="1_ap5kq"]
+[ext_resource type="Script" path="res://RightController.gd" id="1_l2th2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1gwgh"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xo0dg"]
+top_radius = 0.01
+bottom_radius = 0.01
+height = 10.0
+radial_segments = 8
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_blmgw"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bwfe6"]
 
 [node name="Player" type="Node3D"]
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 1.5, -0.2)
 tracker = &"left_hand"
-script = ExtResource("1_ap5kq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 mesh = SubResource("BoxMesh_1gwgh")
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1.5, -0.2)
 tracker = &"right_hand"
+script = ExtResource("1_l2th2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 mesh = SubResource("BoxMesh_1gwgh")
+
+[node name="Ray" type="MeshInstance3D" parent="XROrigin3D/RightController"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -5)
+mesh = SubResource("CylinderMesh_xo0dg")
+
+[node name="PlayerPlaceholder" type="Node3D" parent="XROrigin3D"]
+
+[node name="Head" type="MeshInstance3D" parent="XROrigin3D/PlayerPlaceholder"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.6, 0)
+mesh = SubResource("SphereMesh_blmgw")
+
+[node name="Body" type="MeshInstance3D" parent="XROrigin3D/PlayerPlaceholder"]
+transform = Transform3D(0.2, 0, 0, 0, 0.6, 0, 0, 0, 0.2, 0, 0.6, 0)
+mesh = SubResource("CylinderMesh_bwfe6")
+skeleton = NodePath("../..")

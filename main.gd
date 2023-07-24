@@ -18,10 +18,10 @@ func _ready():
 	else:
 		print("OpenXR not initialized, please check if your headset is connected")
 
+	# Store references to the controllers, might remove this later
 	leftController = get_node("Player/XROrigin3D/LeftController");
 	rightController = get_node("Player/XROrigin3D/LeftController");
 	
 func _process(_delta):
-	print(leftController.get_input("trigger_click"))
-
-
+	pass
+	# print(leftController.get_input("trigger_click"))
