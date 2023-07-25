@@ -1,6 +1,6 @@
 # Kick-a-Brick Godot 4.1 VR demo project
 
-This is a simple-as-possible demo for a [Godot](https://godotengine.org/) VR project.
+This is a simple-as-possible demo for a [Godot](https://godotengine.org/) VR project, without a need for additional plugins.
 
 I created this demo to get familiar with programming VR using this game engine. Way more elaborate VR-examples exist, based on the very versatile [Godot XR Tools](https://github.com/GodotVR/godot-xr-tools). I have used this with success, but still found that it gives me insight to experiment with the basics from scratch.
 
