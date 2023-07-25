@@ -46,10 +46,12 @@ When playing with Godot a few years ago, I found it convenient for
 quickly creating 3D-content, but was put off by the use of GDScript.
 Having worked with C# and not exactly being a Python fan, this proprietary scripting language struck me as immature.
 
-Re-evaluating the latest 4.1 version, I still found it a very convenient
-development tool, and it has matured a lot. The tings that made me most happy are:
+Re-evaluating the latest 4.1 version, once again, I found it a very convenient
+development tool, and it feels more solid. The tings that made me most happy are:
 - VR/XR-support, worked well for creating a demo
-- Lightweight, for sure when compared to a hog like Unity
+- Lightweight and small size, for sure when compared to a hog like Unity
+- Fast compilation, debugging, and export of executables
+- It's open source
 
 WebXR-export gave me "SharedArrayBuffer" trouble, and from what I see on-line that is a common problem. I expect this to be resolved, as XR-support is a relatively new development and constantly moving. For WebXR development, I would still use three.js or the likes.
 
