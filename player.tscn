@@ -1,15 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://chocfnd1gnxcl"]
+[gd_scene load_steps=6 format=3 uid="uid://chocfnd1gnxcl"]
 
 [ext_resource type="Script" path="res://RightController.gd" id="1_l2th2"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_1gwgh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42apb"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_e8yov"]
+material = SubResource("StandardMaterial3D_42apb")
+top_radius = 0.01
+bottom_radius = 0.025
+height = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2hnu"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_xo0dg"]
-top_radius = 0.01
-bottom_radius = 0.01
+material = SubResource("StandardMaterial3D_v2hnu")
+top_radius = 0.005
+bottom_radius = 0.005
 height = 10.0
 radial_segments = 8
 rings = 1
+cap_top = false
+cap_bottom = false
 
 [node name="Player" type="Node3D"]
 
@@ -23,8 +37,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 1.5, -0.2)
 tracker = &"left_hand"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-mesh = SubResource("BoxMesh_1gwgh")
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_e8yov")
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1.5, -0.2)
@@ -32,8 +46,8 @@ tracker = &"right_hand"
 script = ExtResource("1_l2th2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-mesh = SubResource("BoxMesh_1gwgh")
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_e8yov")
 
 [node name="Ray" type="MeshInstance3D" parent="XROrigin3D/RightController"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -5)
