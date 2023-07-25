@@ -6,7 +6,7 @@ size = Vector3(0.3, 0.1, 0.16)
 [sub_resource type="BoxMesh" id="BoxMesh_xxyxt"]
 size = Vector3(0.3, 0.1, 0.16)
 
-[node name="RigidBox" type="RigidBody3D"]
+[node name="Brick" type="RigidBody3D"]
 inertia = Vector3(0.04, 0.02, 0.02)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
