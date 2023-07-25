@@ -40,20 +40,21 @@ The brick scene contains a re-usable rigid-body brick. Instances of this scene a
 
 It appears that stacking too many rows of bricks will make the wall collapse. The physics engine will cause collisions between bricks that tumble the wall if too high. This can be resolved, but I left it for now.
 
-## Initial and after thoughts on Godot
+WebXR-export gave me "SharedArrayBuffer" trouble, and from what I see on-line that is a common problem. I expect this to be resolved, as XR-support is a relatively new development and constantly moving.
+
+## Thoughts on Godot
+
+Summarizing: it's been a positive experience!
 
 When playing with Godot a few years ago, I found it convenient for
 quickly creating 3D-content, but was put off by the use of GDScript.
 Having worked with C# and not exactly being a Python fan, this proprietary scripting language struck me as immature.
 
 Re-evaluating the latest 4.1 version, once again, I found it a very convenient
-development tool, and it feels more solid. The tings that made me most happy are:
+game engine, and it feels more solid. The things that made me most happy are:
 - VR/XR-support, worked well for creating a demo
 - Lightweight and small size, for sure when compared to a hog like Unity
 - Fast compilation, debugging, and export of executables
 - It's open source
 
-WebXR-export gave me "SharedArrayBuffer" trouble, and from what I see on-line that is a common problem. I expect this to be resolved, as XR-support is a relatively new development and constantly moving. For WebXR development, I would still use three.js or the likes.
-
-My (personal) preference for a different language remains, but I decided to go for the GDScript approach nevertheless.
-C# is by now well-supported, but at the same time, I would like to keep the software lightweight and suitable for multiple platforms, including mobile.
+My (personal) preference for a different language remains, but I decided to go for the GDScript approach nevertheless. C# is by now well-supported, but at the same time, I would like to keep the software lightweight and suitable for multiple platforms, including mobile.
