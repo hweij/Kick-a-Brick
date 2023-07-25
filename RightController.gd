@@ -11,7 +11,10 @@ func _ready():
 # func _process(delta):
 #	pass
 
+# Range of the ray
 const RAY_LENGTH = 20
+# Force for kicking rigid objects
+const FORCE = 10
 
 func _physics_process(_delta):
 	var space_state = get_world_3d().direct_space_state
@@ -24,19 +27,14 @@ func _physics_process(_delta):
 
 	var result = space_state.intersect_ray(query)
 	
-	# print(result)
-	
 	var push = false
-	var state = get_input("trigger_click")
-	if state != trigger_click:
-		trigger_click = state
+	var tc = get_input("trigger_click")
+	if tc != trigger_click:
+		trigger_click = tc
 		push = trigger_click
 
-	if push && result && result.collider:
+	if push && result:
 		var obj = result.collider
 		if obj is RigidBody3D:
-			print("PUSH")
-			print(result)
-			var local_pos = result.position - obj.position
-			print(local_pos)
-			result.collider.apply_impulse(dir * 10, local_pos)
+			var hit_pos = result.position - obj.position
+			result.collider.apply_impulse(dir * FORCE, hit_pos)
