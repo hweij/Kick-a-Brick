@@ -1,10 +1,10 @@
 # Kick-a-Brick Godot 4.1 VR demo project
 
-This is a simple-as-possible demo for a Godot VR project.
-I created it to get familiar with programming VR using this game engine.
+This is a simple-as-possible demo for a [Godot](https://godotengine.org/) VR project.
 
-The "game" consists of a VR-scene, a player, and a brick wall that can be destroyed by lasering
-bricks with your right-hand controller.
+I created this demo to get familiar with programming VR using this game engine. Way more elaborate VR-examples exist, based on the very versatile [Godot XR Tools](https://github.com/GodotVR/godot-xr-tools). I have used this with success, but still found that it gives me insight to experiment with the basics from scratch.
+
+The "game" consists of a VR-scene, a player, and a brick wall that can be destroyed by lasering bricks with your right-hand controller.
 
 It has been developed and tested with Godot 4.1, Steam VR, and a PICO 4 headset.
 
